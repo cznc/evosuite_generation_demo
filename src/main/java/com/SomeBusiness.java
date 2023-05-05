@@ -5,24 +5,14 @@ import com.entity.IdInfoDTO;
 import com.entity.IdInfoEntity;
 import com.mapstruct.IdMapstruct;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class SomeBusiness {
-    public static void main(String[] args) throws Exception {
-        SomeBusiness someBusiness = new SomeBusiness();
-        List<IdInfoEntity> list = new ArrayList<>();
-        IdInfoEntity entity = null;
-        entity=new IdInfoEntity();
-        entity.setCrdNo("1234567");
-        entity.setCrdTp("04");
-        list.add(entity);
-        int ii = someBusiness.getAging(2, null, true, list);
-        log.debug("ii="+ii);
-    }
-
+@Component
+public class SomeBusiness implements ISomeBusiness{
 
     public int getAging(int age, String name, boolean isMan,
                         List<IdInfoEntity> ids) throws Exception{

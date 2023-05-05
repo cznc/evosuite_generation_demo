@@ -105,10 +105,4 @@ public class SomeBusiness_ESTest{ //extends SomeBusiness_ESTest_scaffolding {
       }
   }
 
-  @Test(timeout = 4000)
-  public void test7()  throws Throwable  {
-      String[] stringArray0 = new String[6];
-      SomeBusiness.main(stringArray0);
-      assertEquals(6, stringArray0.length);
-  }
 }

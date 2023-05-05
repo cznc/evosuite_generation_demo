@@ -11,5 +11,8 @@ public class SomeBusiness_ESTest{ //extends SomeBusiness_ESTest_scaffolding {
 # To find out propertly version of dependency:
 https://developer.aliyun.com/mvn/search
 
+# Demo URL
+http://localhost:8080/v1/idInfo/query/1
+
 2023/5/6 0:58
 
