@@ -8,4 +8,8 @@ src\test\java\com\SomeBusiness_ESTest.java
 @RunWith(SpringJUnit4ClassRunner.class)
 public class SomeBusiness_ESTest{ //extends SomeBusiness_ESTest_scaffolding {
 
+# To find out propertly version of dependency:
+https://developer.aliyun.com/mvn/search
+
 2023/5/6 0:58
+

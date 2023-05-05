@@ -1,6 +1,9 @@
 package com;
 
+import com.common.NdcException;
+import com.entity.IdInfoDTO;
 import com.entity.IdInfoEntity;
+import com.mapstruct.IdMapstruct;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -17,7 +20,7 @@ public class SomeBusiness {
         entity.setCrdTp("04");
         list.add(entity);
         int ii = someBusiness.getAging(2, null, true, list);
-        //("ii="+ii);
+        log.debug("ii="+ii);
     }
 
 
@@ -27,10 +30,10 @@ public class SomeBusiness {
         int aging = 0;
         if(name == null) return 0;
         if(age<1){
-            throw new Exception("Age cannot less that zero.");
+            throw new NdcException("Age cannot less that zero.");
         }
         if(age>200){
-            throw new Exception("Age cannot bigger that two hundred.");
+            throw new NdcException("Age cannot bigger that two hundred.");
         }
         if(isMan){
             aging = age + 30;
@@ -40,6 +43,8 @@ public class SomeBusiness {
         for (IdInfoEntity entity:ids){
             if("04".equals(entity.getCrdTp())){
                 aging += 5;
+                IdInfoDTO dto = IdMapstruct.INSTANCE.toIdInfoDTO(entity);
+                log.debug("Yes it: {}, {}", dto.getCrdNo(), dto.getCrdTp());
             }
         }
         return aging;
